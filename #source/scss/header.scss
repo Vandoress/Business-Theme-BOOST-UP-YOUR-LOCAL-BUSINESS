@@ -1,0 +1,131 @@
+.header {
+		@media (max-width: 767.98px){
+		height: 63px;
+		position: fixed;
+		z-index: 100;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		background-color: #fff;
+	}
+	&__body {
+		display: flex;
+		justify-content:space-between;
+		align-items: center;
+		height: 93px;
+	}
+	&__column {}
+	&__logo {
+		display: inline-block;
+		width: 50px;
+		& img{max-width: 100%};
+		@media (max-width: 992.98px){
+			width: 40px;
+		}
+		@media (max-width: 767.98px){
+			width: 50px;
+		}
+	}
+	&__burger {}
+}
+.menu-header {
+	&__burger{
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		display: none;
+		position: absolute;
+		top: 25px;
+		right: 50px;	
+		z-index: 4;
+		span{transition: all 0.3s ease 0s; top: 8px; left:0px; position: absolute; width: 100%; height: 2px; background-color: #000;
+			&:first-child{top:0px};
+			&:last-child{top: auto; bottom: 0px;}
+		}
+		&.active{
+			span{transform:scale(0);
+					&:first-child{transform:rotate(-45deg);top: 8px;}
+					&:last-child{transform:rotate(45deg);bottom: 8px;}
+			}
+		}
+		@media (max-width: 767.98px){
+				display: block;
+		}
+	}
+	&__background{
+		@media (max-width: 767.98px){
+			&.active{
+				display: block;
+				position: fixed;
+				left: 0;
+				top: 62px;
+				width: 100vw;
+				height: 100vh;
+				background-color: #4F4F4F;
+				z-index: 1;
+				opacity: .5;
+			}
+		}
+	}
+	&__menu {
+		@media (max-width: 767.98px){
+			position: fixed;
+			width: 220px;
+			height: 100%;
+			top: 62px;
+			left: -110%;
+			background-color: #696969;
+			z-index: 5;
+			padding: 10px 10px 0 15px;
+			overflow: auto;
+		}
+		&.active{	
+			left:0;
+			transition: all 0.4s ease 0s;
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		@media (max-width: 767.98px){
+			display: block;
+		}
+	}
+	&__link {
+		font-family: 'Lato';
+		font-size: 13.5px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: #868686;
+		padding: 0 19.5px;
+		display: inline-block;
+		height: 34px;
+		line-height: 34px;
+		transition: background-color 0.5s ease 0s, color  0.5s ease 0s;
+		@media (max-width: 992.98px){
+			padding: 0 10px;
+			font-size: 12.5px;
+		}
+		&_active{
+			display: inline-block;
+			color: #fff;
+			height: 34px;
+			line-height: 34px;
+			border-radius: 2px;
+			background-color: #ffbb42;
+		}
+		&:hover{
+			color: #fff;
+			height: 34px;
+			line-height: 34px;
+			border-radius: 2px;
+			background-color: #ffbb42;
+		}
+		@media (max-width: 767.98px){
+			font-size: 15.5px;
+			color: #fff;
+			margin-bottom: 10px;
+		}
+	}
+}
+
